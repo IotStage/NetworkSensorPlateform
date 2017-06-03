@@ -1,0 +1,49 @@
+{% extends 'template.html.twig' %}
+
+{% block body%}
+<div class="row">{% include 'nav.html.twig' %}<br><br><br></div>
+{% block content %}
+<div class="row">
+    <div class="row">
+        <ul class="nav nav-tabs" style="margin: 25px;" data-no-turbolink="">
+            <li role="presentation" class="active">
+                <a href="{{ path_for('graph') }}/tab/1" >Temps reel</a>
+            </li>
+            <li role="presentation">
+                <a href="{{ path_for('graph') }}/tab/2" >Visualisation</a>
+            </li>
+            <li role="presentation">
+                <a href="{{ path_for('graph') }}/tab/3">Parametres Maladies</a>
+            </li>
+            <li role="presentation">
+                <a href="{{ path_for('graph') }}/tab/4">Exportation des données</a>
+            </li>
+        </ul>
+    </div>
+    {% for key, cou in  graph %}
+        <div class="col-md-6">
+            {% include 'graph.panel.twig' with {'id': key } %}
+
+        </div>
+    {% endfor %}
+
+
+</div>
+
+
+{% endblock %}
+
+{% block chart %}
+    {% for key, courbe in  graph %}
+        {% include 'courbe/line.html.twig' with {'courbe': courbe } %}
+    {% endfor%}
+
+{% endblock %}
+{% block highchart %}
+    <script type="text/javascript" src="{{ base_url() }}/public/dist/js/highcharts.js"></script>
+    <script type="text/javascript" src="{{ base_url() }}/public/dist/js/modules/exporting.js"></script>
+{% endblock %}
+{% endblock %}
+
+
+

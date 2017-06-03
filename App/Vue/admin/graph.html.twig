@@ -1,0 +1,138 @@
+{% extends 'template.admin.twig' %}
+
+{% block sub_contenu %}
+    <div class="row">
+        <div class="xs table">
+            <div class="panel panel-warning" data-widget="{&quot;draggable&quot;: &quot;false&quot;}" data-widget-static="">
+                <div class="panel-body no-padding">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr class="info">
+                            <th>id</th>
+                            <th>Capteur</th>
+                            <th>Type de coubre</th>
+                            <th>options</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            {% for key, cou in  courbes %}
+                                <tr>
+                                    <td>{{ cou.id }}</td>
+                                    <td>{{ cou.capteur }}</td>
+                                    <td>{{ cou.type_courbe }}</td>
+                                    <td>
+                                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#editGraph{{ cou.id }}">modifier</button>
+                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteGraph{{ cou.id }}">Supprimer</button>
+
+                                    </td>
+                                    <div class="modal fade"  id="editGraph{{ cou.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <form method="post" action="{{ path_for("editGraph")}}">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                        <h4 class="modal-title">edition graph</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+
+                                                        <div class="form-group">
+                                                            <label class="form-control-label">Capteur</label>
+                                                            <input type="text" class="form-control" value="{{ cou.capteur }}" name="capteur" disabled >
+                                                            <input type="hidden" class="form-control" name="id" value="{{ cou.id }}">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="form-control-label">Type de courbe</label>
+                                                            <select name="type" class="form-control">
+                                                                {% for key, type in  typeCourbe %}
+                                                                    <option name="{{ key }}">{{ type }}</option>
+                                                                {% endfor %}
+                                                            </select>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                                    </div>
+                                                </form>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+
+                                    <div class="modal fade"  id="deleteGraph{{ cou.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <form method="post" action="{{ path_for("suppGraph")}}">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                        <h4 class="modal-title">Suppression graph</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+
+                                                        Voulez vous vraiement supprimer le graph ?
+                                                        <input type="hidden" class="form-control" name="id" value="{{ cou.id }}">
+
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                                    </div>
+                                                </form>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+
+                                </tr>
+                            {% endfor %}
+
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="3">
+                                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#addGraph">ajouter</button>
+                                    <div class="modal fade"  id="addGraph" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <form method="post" action="{{ path_for("addGraph")}}">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                    <h4 class="modal-title">Ajout graph</h4>
+                                                </div>
+                                                <div class="modal-body">
+
+                                                        <div class="form-group">
+                                                            <label class="form-control-label">Capteur</label>
+                                                            <select name="capteur" class="form-control">
+                                                                {% for key, sensor in  capteurs %}
+                                                                    <option name="{{ key }}">{{ sensor.nom }}</option>
+                                                                {% endfor %}
+
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="form-control-label">Type de courbe</label>
+                                                            <select name="type" class="form-control">
+                                                                {% for key, type in  typeCourbe %}
+                                                                    <option name="{{ key }}">{{ type }}</option>
+                                                                {% endfor %}
+                                                            </select>
+                                                        </div>
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                                </div>
+                                                </form>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

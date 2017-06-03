@@ -1,0 +1,253 @@
+{% extends 'template.admin.twig' %}
+
+{% block sub_contenu %}
+    {% if(maladie is  defined ) %}
+        <div class="row">
+            <div class="panel panel-primary" data-widget="{'draggable': 'true'}" data-widget-static="">
+                <div class="panel-heading">
+                    <h2>Liste Maladies enregistrées</h2>
+                    <div class="panel-ctrls" data-actions-container="" data-action-collapse="{target: .panel-body}">
+                        <span class="button-icon has-bg"><i class="ti ti-angle-down"></i></span></div>
+                </div>
+                <div class="panel-body no-padding" style="display: block;">
+                    <table class="table table-striped table-hover table-responsive table-fhr">
+                        <thead>
+                        <tr class="warning">
+                            <th>id</th>
+                            <th> nom </th>
+                            <th> desscription</th>
+                            <th> actions </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for hist in maladie %}
+                            <tr>
+                                <td scope="row">{{ hist.id }}</td>
+                                <td>{{ hist.nom }}</td>
+                                <td>{{ hist.description }}</td>
+                                <td>
+
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    {% else %}
+        <h2> aucune Maladie enregistrée </h2>
+    {% endif %}
+
+    <div class="row">
+        <button type="button" class="btn btn-primary btn-lg no-padding" data-toggle="modal" data-target="#addMaladie">ajouter maladie</button>
+
+
+        <div class="modal fade"  id="addMaladie" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <form method="post" action="{{ path_for("seuil")}}">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">Ajout d'un seuil</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group well">
+                                <label class="form-control-label">Nom maladie</label>
+                                <input type="text" class="form-control" name="nom" placeholder="donner un nom">
+                                <input type="hidden" name="maladie" value="true">
+                            </div>
+                            <div class="form-group well">
+                                <label class="form-control-label">Description maladie</label>
+                                <textarea class="form-control" name="description" rows="10" cols="10"></textarea>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-ban fa-2x"></i> Annuler</button>
+                            <button type="submit" id="load" class="btn btn-primary"><i class="fa fa-database fa-2x"></i> enregistrer</button>
+                        </div>
+                    </form>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+    </div>
+<br>
+    {% if(maladieCapteur is defined) %}
+        {% for key, mal in maladie %}
+            {% if(maladieCapteur[key] is defined) %}
+            <div class="row">
+                <div class="panel panel-success" data-widget="{'draggable': 'true'}" data-widget-static="">
+                    <div class="panel-heading">
+                        <h2>les Seuils pour {{ mal.nom }}</h2>
+                        <div class="panel-ctrls" data-actions-container="" data-action-collapse="{target: .panel-body}">
+                            <span class="button-icon has-bg"><i class="ti ti-angle-down"></i></span></div>
+                    </div>
+                    <div class="panel-body no-padding" style="display: block;">
+                        <table class="table table-striped table-hover table-responsive table-fhr">
+                            <thead>
+                            <tr class="warning">
+                                <th>id</th>
+                                <th> capteur </th>
+                                <th> seuil </th>
+                                <th> actions </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for hist in maladieCapteur[key] %}
+                                <tr>
+                                    <td scope="row">{{ hist.id }}</td>
+                                    <td>{{ hist.capteur }}</td>
+                                    <td>{{ hist.seuil }}</td>
+                                    <td>
+                                        <button type="button" class="btn btn-success no-padding" data-toggle="modal" data-target="#editSeuil{{ hist.id }}">modifier</button>
+                                        <button type="button" class="btn btn-danger no-padding" data-toggle="modal" data-target="#deleteSeuil{{ hist.id }}">Supprimer</button>
+
+                                    </td>
+                                    <div class="modal fade"  id="editSeuil{{ hist.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <form method="post" action="{{ path_for("seuil")}}">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                        <h4 class="modal-title">edition Seuil</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+
+                                                        <div class="form-group">
+                                                            <label class="form-control-label">Capteur</label>
+                                                            <input type="text" class="form-control" value="{{ hist.capteur }}" name="capteur" disabled >
+                                                            <input type="hidden" class="form-control" name="idEditMaladie" value="{{ hist.id }}">
+                                                            <input type="hidden" class="form-control" name="id_Maladie" value="{{ hist.id_maladie }}">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="form-control-label">Seuil</label>
+                                                            <input type="number" min="0" class="form-control" name="seuil">
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                                                        <button type="submit" class="btn btn-primary">Enregistrer</button>
+                                                    </div>
+                                                </form>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+
+                                    <div class="modal fade"  id="deleteSeuil{{ hist.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <form method="post" action="{{ path_for("seuil")}}">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                        <h4 class="modal-title">Suppression Seuil</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+
+                                                        Voulez vous vraiement le seuil parametré ?
+                                                        <input type="hidden" class="form-control" name="idDeleteSeuil" value="{{ hist.id }}">
+
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-danger no-padding" data-dismiss="modal">fermer</button>
+                                                        <button type="submit" class="btn btn-primary no-padding"> Ok </button>
+                                                    </div>
+                                                </form>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="panel-footer">
+                        <button type="button" class="btn btn-primary no-padding" data-toggle="modal" data-target="#addSeuil{{ key }}">Ajouter</button>
+                        <div class="modal fade"  id="addSeuil{{ key }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <form method="post" action="{{ path_for("seuil")}}">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title">Ajout d'un seuil</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="form-group">
+                                                <label class="form-control-label">Maladie</label>
+                                                <input type="text" class="form-control" value="{{ mal.nom }}" name="nomMaladie" disabled >
+                                                <input type="hidden" class="form-control" value="{{ mal.id }}" name="idMaladie" >
+
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="form-control-label">Capteur</label>
+                                                <select name="capteur" class="form-control" required>
+                                                    {% for key, capteur in  capteurs %}
+                                                        <option name="{{ key }}">{{ capteur.nom }}</option>
+                                                    {% endfor %}
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="form-control-label">Valeur seuil</label>
+                                                <input type="number" class="form-control" value="0" name="seuil" >
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-ban fa-2x"></i> Annuler</button>
+                                            <button type="submit" id="load" class="btn btn-primary"><i class="fa fa-database fa-2x"></i> enregistrer</button>
+                                        </div>
+                                    </form>
+                                </div><!-- /.modal-content -->
+                            </div><!-- /.modal-dialog -->
+                        </div><!-- /.modal -->
+                    </div>
+                    </div>
+                </div>
+
+                </div>
+                {% else %}
+                    <div class="row">
+                        <button type="button" class="btn btn-primary no-padding" data-toggle="modal" data-target="#addSeuil{{ key }}">Ajouter</button>
+                        <div class="modal fade"  id="addSeuil{{ key }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <form method="post" action="{{ path_for("seuil")}}">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title">Ajout d'un seuil</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="form-group">
+                                                <label class="form-control-label">Maladie</label>
+                                                <input type="text" class="form-control" value="{{ mal.nom }}" name="nomMaladie" disabled >
+                                                <input type="hidden" class="form-control" value="{{ mal.id }}" name="idMaladie" >
+
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="form-control-label">Capteur</label>
+                                                <select name="capteur" class="form-control" required>
+                                                    {% for key, capteur in  capteurs %}
+                                                        <option name="{{ key }}">{{ capteur.nom }}</option>
+                                                    {% endfor %}
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="form-control-label">Valeur seuil</label>
+                                                <input type="number" class="form-control" value="0" name="seuil" >
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-ban fa-2x"></i> Annuler</button>
+                                            <button type="submit" id="load" class="btn btn-primary"><i class="fa fa-database fa-2x"></i> enregistrer</button>
+                                        </div>
+                                    </form>
+                                </div><!-- /.modal-content -->
+                            </div><!-- /.modal-dialog -->
+                        </div><!-- /.modal -->
+                    </div>
+                {% endif %}
+                {% endfor %}
+    {% endif %}
+
+{% endblock %}

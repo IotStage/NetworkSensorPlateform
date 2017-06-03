@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Interface d'administration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="application/x-javascript">
+        addEventListener("load", function() {
+            setTimeout(hideURLbar, 0); }, false);
+        function hideURLbar(){
+            window.scrollTo(0,1);
+        }
+    </script>
+    <link href="{{ base_url() }}/public/dist_admin/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+    <!-- Custom CSS -->
+    <link href="{{ base_url() }}/public/dist_admin/css/style.css" rel='stylesheet' type='text/css' />
+    <!-- Graph CSS -->
+    <link href="{{ base_url() }}/public/dist_admin/css/font-awesome.css" rel="stylesheet">
+    <!-- jQuery -->
+    <!-- lined-icons -->
+    <link rel="stylesheet" href="{{ base_url() }}/public/dist_admin/css/icon-font.min.css" type='text/css' />
+    <!-- //lined-icons -->
+    <!-- chart -->
+    <script src="{{ base_url() }}/public/dist_admin/js/Chart.js"></script>
+    <!-- //chart -->
+    <!--animate-->
+    <link href="{{ base_url() }}/public/dist_admin/css/animate.css" rel="stylesheet" type="text/css" media="all">
+    <script src="{{ base_url() }}/public/dist_admin/js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <!--//end-animate-->
+    <!----webfonts--->
+    <link href='//fonts.googleapis.com/css?family=Cabin:400,400italic,500,500italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+    <!---//webfonts--->
+    <!-- Meters graphs -->
+    <script src="{{ base_url() }}/public/dist_admin/js/jquery-1.10.2.min.js"></script>
+
+    <script src="https://use.fontawesome.com/63fa0bc089.js"></script>
+
+    {% block style_sup %}{% endblock %}
+    <!-- Placed js at the end of the document so the pages load faster -->
+</head>
+<body class="sticky-header left-side-collapsed">
+    <section>
+
+
+            {% block menu %}{% endblock %}
+        <div class="main-content">
+            {% block contenu %}{% endblock %}
+        </div>
+
+    </section>
+
+<script src="{{ base_url() }}/public/dist_admin/js/jquery.nicescroll.js"></script>
+<script src="{{ base_url() }}/public/dist_admin/js/scripts.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="{{ base_url() }}/public/dist_admin/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var url = window.location;
+        $('ul.nav a[href="'+ url +'"]').parent().addClass('active');
+        $('ul.nav a').filter(function() {
+            return this.href == url;
+        }).parent().addClass('active');
+    });
+</script>
+{% block js_sup %}{% endblock %}
+
+</body>

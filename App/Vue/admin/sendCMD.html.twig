@@ -1,0 +1,76 @@
+{% extends 'template.admin.twig' %}
+{% block style_sup %}
+<style type="text/css">
+
+</style>
+{% endblock %}
+
+{% block sub_contenu %}
+    {% if(infos == true) %}
+        <div class="alert alert-success">
+            <p>la commande a été envoyé au réseau de capteur avec succés</p>
+        </div>
+    {% endif %}
+        <div class="row switch-right ">
+            <div class="switch-right-grid">
+                <div class="switch-right-grid1">
+                    <h3>{% if(valeur.status == "LU") %}
+                        le temps d'envoi actuel est :  {{ valeur.message }} secondes
+                        {% else %}
+                            Les données sont en cour d'envoi
+                        {% endif %}
+                    </h3>
+                    <br>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+
+        <button type="button" class="btn {% if(valeur.status=="NONLU") %} btn-warning {% else %} btn-primary  {% endif %} btn-lg" data-toggle="modal" data-target="#addCMD" {% if(valeur.status=="NONLU") %} disabled {% endif %}>
+            {% if(valeur.status=="NONLU") %}
+                envoi en cour
+                <i class="fa fa-fw fa-spin fa-spinner"></i>
+            {% else %}
+                Modifier le delai d'envoi des donnees
+            {% endif %}
+        </button>
+
+
+        <div class="modal fade"  id="addCMD" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <form method="post" action="{{ path_for("sendCMD")}}">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">Envoie d'une commande</h4>
+                        </div>
+                        <div class="modal-body">
+
+                            <div class="form-group">
+                                <label class="form-control-label">delai de transmission (en seconde) </label>
+                                <input type="number" class="form-control" name="delai" min="1" max="360000" value="10">
+
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-ban fa-2x"></i> Annuler</button>
+                            <button type="submit" id="load" class="btn btn-primary"><i class="fa fa-paper-plane fa-2x"></i> Envoyer</button>
+                        </div>
+                    </form>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+    </div>
+{% endblock %}
+
+{% block js_sup %}
+    <script type="text/javascript">
+
+    </script>
+{% endblock %}

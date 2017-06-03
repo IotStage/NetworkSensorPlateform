@@ -1,0 +1,72 @@
+{% extends 'template.admin.twig' %}
+
+{% block sub_contenu %}
+    <br>
+    <br>
+
+    <div class="col_3">
+
+        <div class="col-md-3 widget widget1">
+            <a href="{{ path_for("visualisation") }}">
+                <div class="r3_counter_box">
+
+                        <i class="fa fa-area-chart fa-5x" style="color: #80B4EF"></i>
+                    <div class="stats">
+                        <h5>Configuration des graphs</h5>
+                        <div class="grow">
+                            <p>Visualisation</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3 widget widget1">
+            <a href="{{ path_for("sendCMD") }}">
+                <div class="r3_counter_box">
+                 <i class="fa fa-cogs fa-5x" style="color: #00BCD4" ></i>
+                <div class="stats">
+                    <h5>Parametrage du réseau. </h5>
+                    <div class="grow grow1">
+                        <p>Parametrage</p>
+                    </div>
+                </div>
+
+            </div>
+            </a>
+        </div>
+        <div class="col-md-3 widget widget1">
+            <a href="{{ path_for("visualisation") }}">
+            <div class="r3_counter_box">
+
+                    <i class="fa fa-sliders" style="color: #F44336"></i>
+                <div class="stats">
+                    <h5>Valeurs seuils capteurs</h5>
+                    <div class="grow grow3">
+                        <p> Seuils </p>
+                    </div>
+                </div>
+
+            </div>
+            </a>
+        </div>
+        <div class="col-md-3 widget">
+            <a href="{{ path_for("visualisation") }}">
+            <div class="r3_counter_box">
+
+                    <i class="fa fa-exclamation-triangle" style="color: #FFCA28"></i>
+                <div class="stats">
+                    <h5>configuration des alertes</h5>
+                    <div class="grow grow2">
+                        <p> Alertes </p>
+                    </div>
+                </div>
+            </div>
+            </a>
+        </div>
+        <div class="clearfix"> </div>
+
+    </div>
+
+
+
+{% endblock %}

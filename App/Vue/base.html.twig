@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        {% block style %}{% endblock %}
+        {% block javascript %}{% endblock %}
+
+    </head>
+    <body>
+
+        {% block body %}
+            <div class="row">{% block content %} {% endblock %}</div>
+            <div class="row">{% block footer %}{% endblock %}</div>
+        {% endblock %}
+        {% block highchart %}{% endblock %}
+        {% block highstock %}{% endblock %}
+        {% block chart %}{% endblock %}
+        {% block supjs %}{% endblock %}
+    </body>
+
+</html>

@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Application de surveillance de la Qualité de l'eau{% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" href="{{ base_url() }}/public/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ base_url() }}/public/dist/css/highcharts.css">
+    <link rel="stylesheet" href="{{ base_url() }}/public/dist/css/style.css">
+{% endblock %}
+
+{% block javascript %}
+    <script type="text/javascript" src="{{ base_url() }}/public/dist/js/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ base_url() }}/public/dist/js/bootstrap.js"></script>
+{% endblock %}

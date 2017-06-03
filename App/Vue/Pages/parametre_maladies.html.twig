@@ -1,0 +1,54 @@
+{% extends 'template.html.twig' %}
+{% block body%}
+<div class="row">{% include 'nav.html.twig' %}<br><br><br></div>
+{% block content %}
+<div class="row">
+    <div class="row">
+        <ul class="nav nav-tabs" style="margin: 25px;" data-no-turbolink="">
+            <li role="presentation" >
+                <a href="{{ path_for('graph') }}/tab/1" id="channel_link_private_view">Temps reel</a>
+            </li>
+            <li role="presentation">
+                <a href="{{ path_for('graph') }}/tab/2" id="channel_link_public_view">Visualisation</a>
+            </li>
+            <li role="presentation" class="active">
+                <a href="{{ path_for('graph') }}/tab/3" id="channel_link_settings">Parametres Maladies</a>
+            </li>
+            <li role="presentation">
+                <a href="{{ path_for('graph') }}/tab/4" id="channel_link_api_keys">Exportation des données</a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-info panneau">
+            <div class="panel-heading">
+                <div class="valeur">
+                    <h4 style="text-align: center">Variataion du PH</h4>
+
+                </div>
+            </div>
+            <div class="panel-body">
+
+                <div id="graph"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+
+{% block chart %}
+    <script type="text/javascript">
+        Highcharts.chart('graph', {{ graph | raw }});
+    </script>
+
+{% endblock %}
+{% block highchart %}
+    <script type="text/javascript" src="public/dist/js/highcharts.js"></script>
+    <script type="text/javascript" src="public/dist/js/modules/exporting.js"></script>
+{% endblock %}
+{% endblock %}
+
+
+

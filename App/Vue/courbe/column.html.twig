@@ -1,0 +1,36 @@
+<script type="text/javascript">
+
+    Highcharts.chart('{{ courbe.id }}', {
+        chart: {
+            type: 'line'
+        },
+        title: {
+            text: '{{ courbe.title }}'
+        },
+        subtitle: {
+            text: '{{ courbe.title }}'
+        },
+        xAxis: {
+            type: 'datetime(H:i:s)'
+            //categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        },
+        yAxis: {
+            title: {
+                text: '{{ courbe.nom }}'
+            }
+        },
+        plotOptions: {
+            line: {
+                dataLabels: {
+                    enabled: true
+                },
+                enableMouseTracking: false
+            }
+        },
+        series: [{
+            name: 'Tokyo',
+            data: [7.0, 6.9, 9.5, 14.5, 18.4, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+        }]
+    });
+
+</script>

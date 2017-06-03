@@ -1,0 +1,45 @@
+{% extends 'template.admin.twig' %}
+
+{% block sub_contenu %}
+    <div class="row">
+    {% if(infos == true) %}
+    <div class="row">
+        <div class="alert alert-success">
+            <p>la commande a été envoyé au réseau de capteur avec succés</p>
+        </div></div>
+    {% endif %}
+        <br>
+<div class="col-lg-4 switch-right">
+
+
+    <div class="switch-right-grid">
+        <div class="switch-right-grid1">
+    {% if(ctl.sup.status=="LU") %}
+            <h3>Valeur tension Actuelle est: {{ ctl.ctrl.message }} (volt)</h3>
+            <p>commande envoyer le : {{ ctl.ctrl.date }}</p>
+            <p>Valeur reçue le : {{ ctl.ctrl.date }}</p>
+    {% else %}
+            <h3>La requete est envoyée à la station de base</h3><br>
+    {% endif %}
+            <br>
+        </div>
+    </div>
+    <br>
+</div>
+    </div>
+    <div class="row">
+        <form method="post" action="">
+            <input type="hidden" value="tension" name="message">
+            <button type="submit" class="btn {% if(ctl.sup.status=="NONLU") %} btn-warning {% else %} btn-primary {% endif %} btn-lg" {% if(ctl.sup.status=="NONLU") %} disabled {% endif %}>
+                {% if(ctl.sup.status=="NONLU") %}
+                    envoi en cour
+                    <i class="fa fa-fw fa-spin fa-spinner"></i>
+                {% else %}
+                    Envoyer une requete à la station de base
+                {% endif %}
+            </button>
+        </form>
+    </div>
+
+
+{% endblock %}

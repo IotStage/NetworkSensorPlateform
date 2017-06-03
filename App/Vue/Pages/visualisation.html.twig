@@ -1,0 +1,57 @@
+{% extends 'template.html.twig' %}
+{% block body%}
+<div class="row">{% include 'nav.html.twig' %}<br><br><br></div>
+{% block content %}
+    <div class="row">
+        <div class="row">
+            <ul class="nav nav-tabs" style="margin: 25px;" data-no-turbolink="">
+                <li role="presentation" class="active">
+                    <a href="{{ path_for('graph') }}/tab/1">Temps reel</a>
+                </li>
+                <li role="presentation">
+                    <a href="{{ path_for('graph') }}/tab/2">Visualisation</a>
+                </li>
+                <li role="presentation">
+                    <a href="{{ path_for('graph') }}/tab/3">Parametres Maladies</a>
+                </li>
+                <li role="presentation">
+                    <a href="{{ path_for('graph') }}/tab/4">Exportation des données</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+{% endblock %}
+{% block supjs %}
+    <script type="text/javascript">
+        window.onscroll = fadeNav;
+
+        function fadeNav(){
+            var offset = getScrollXY();
+            offset[1] > 0 ? setNavOpacity(0.5) : setNavOpacity(1.5);
+        }
+        function setNavOpacity(newOpacity){
+            var navBar = document.getElementById("head");
+            navBar.style.opacity = newOpacity;
+        }
+        function getScrollXY() {
+            var scrOfX = 0, scrOfY = 0;
+            if( typeof( window.pageYOffset ) == 'number' ) {
+                //Netscape compliant
+                scrOfY = window.pageYOffset;
+                scrOfX = window.pageXOffset;
+            } else if( document.body && ( document.body.scrollLeft || document.body.scrollTop ) ) {
+                //DOM compliant
+                scrOfY = document.body.scrollTop;
+                scrOfX = document.body.scrollLeft;
+            } else if( document.documentElement && ( document.documentElement.scrollLeft || document.documentElement.scrollTop ) ) {
+                //IE6 standards compliant mode
+                scrOfY = document.documentElement.scrollTop;
+                scrOfX = document.documentElement.scrollLeft;
+            }
+            return [ scrOfX, scrOfY ];
+        }
+    </script>
+{% endblock %}
+{% endblock %}
