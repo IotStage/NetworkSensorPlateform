@@ -4,116 +4,23 @@
     <div class="row">{% include 'nav.html.twig' %}<br><br><br></div>
     {% block content %}
         <div class="row">
-            <div class="row">
-                <ul class="nav nav-tabs" style="margin: 25px;" data-no-turbolink="">
-                    <li role="presentation" >
-                        <a href="{{ path_for('graph') }}/tab/1" id="channel_link_private_view">Temps reel</a>
-                    </li>
-                    <li role="presentation" class="active">
-                        <a href="{{ path_for('graph') }}/tab/2" id="channel_link_public_view">Visualisation</a>
-                    </li>
-                    <li role="presentation">
-                        <a href="{{ path_for('graph') }}/tab/3" id="channel_link_settings">Parametres Maladies</a>
-                    </li>
-                    <li role="presentation">
-                        <a href="{{ path_for('graph') }}/tab/4" id="channel_link_api_keys">Exportation des données</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-md-6">
-                <div class="panel panel-info panneau">
-                    <div class="panel-heading">
-                        <div class="valeur">
-                            <h4 style="text-align: center">Variataion du PH</h4>
-
-                        </div>
-                    </div>
-                    <div class="panel-body">
-
-                        <div id="graph"></div>
-                    </div>
+            {% include "menu.graph.html.twig"  with {'id': 2 } %}
+            {% for key, cou in  graph %}
+                <div class="col-md-10 col-md-offset-1" >
+                    {% include 'graph.panel.twig' with {'id': key, 'nom': cou.nom, "title":"globale"} %}
                 </div>
-            </div>
+            {% endfor %}
         </div>
 
 
     {% endblock %}
 
     {% block chart %}
-
-        <script type="text/javascript">
-            $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=new-intraday.json&callback=?', function (data) {
-
-                // create the chart
-                Highcharts.stockChart('graph', {
-
-
-                    title: {
-                        text: 'AAPL stock price by minute'
-                    },
-
-                    subtitle: {
-                        text: 'Using explicit breaks for nights and weekends'
-                    },
-
-                    xAxis: {
-                        breaks: [{ // Nights
-                            from: Date.UTC(2011, 9, 6, 16),
-                            to: Date.UTC(2011, 9, 7, 8),
-                            repeat: 24 * 36e5
-                        }, { // Weekends
-                            from: Date.UTC(2011, 9, 7, 16),
-                            to: Date.UTC(2011, 9, 10, 8),
-                            repeat: 7 * 24 * 36e5
-                        }]
-                    },
-
-                    rangeSelector: {
-                        buttons: [{
-                            type: 'hour',
-                            count: 1,
-                            text: '1h'
-                        }, {
-                            type: 'day',
-                            count: 1,
-                            text: '1D'
-                        }, {
-                            type: 'all',
-                            count: 1,
-                            text: 'All'
-                        }],
-                        selected: 1,
-                        inputEnabled: false
-                    },
-
-                    series: [{
-                        name: 'AAPL',
-                        type: 'area',
-                        data: data,
-                        gapSize: 5,
-                        tooltip: {
-                            valueDecimals: 2
-                        },
-                        fillColor: {
-                            linearGradient: {
-                                x1: 0,
-                                y1: 0,
-                                x2: 0,
-                                y2: 1
-                            },
-                            stops: [
-                                [0, Highcharts.getOptions().colors[0]],
-                                [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
-                            ]
-                        },
-                        threshold: null
-                    }]
-                });
-            });
-        </script>
+        {% for key, courbe in  graph %}
+            {% include 'courbe/globale.html.twig' with {'courbe': courbe } %}
+        {% endfor%}
     {% endblock %}
     {% block highstock %}
-
         <script src="https://code.highcharts.com/stock/highstock.js"></script>
         <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
     {% endblock %}

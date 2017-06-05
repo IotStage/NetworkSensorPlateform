@@ -3,22 +3,7 @@
 <div class="row">{% include 'nav.html.twig' %}<br><br><br></div>
 {% block content %}
     <div class="row">
-        <div class="row">
-            <ul class="nav nav-tabs" style="margin: 25px;" data-no-turbolink="">
-                <li role="presentation" class="active">
-                    <a href="{{ path_for('graph') }}/tab/1">Temps reel</a>
-                </li>
-                <li role="presentation">
-                    <a href="{{ path_for('graph') }}/tab/2">Visualisation</a>
-                </li>
-                <li role="presentation">
-                    <a href="{{ path_for('graph') }}/tab/3">Parametres Maladies</a>
-                </li>
-                <li role="presentation">
-                    <a href="{{ path_for('graph') }}/tab/4">Exportation des données</a>
-                </li>
-            </ul>
-        </div>
+        {% include "menu.graph.html.twig" %}
     </div>
 
 

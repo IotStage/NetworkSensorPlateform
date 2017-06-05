@@ -36,4 +36,53 @@ class CapteurDOA extends DOA
         return $ex->fetch(\PDO::FETCH_CLASS, __CLASS__);
     }
 
+    static function getMoyenneFromSpecificCapteur(\PDO $bd, $capteur){
+        $req = "SELECT moyenne,last_id, moyenne_carre, normale FROM ".static::$CLASS_NAME." where nom=:nom";
+        $ex = $bd->prepare($req);
+        $ex->execute(array(
+            'nom'=>$capteur
+        ));
+        return $ex->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
+    static function updateMoyenne(\PDO $bd, $capteur, $moyenne){
+        $req = "update ".static::$CLASS_NAME." set moyenne=:moyenne where nom=:nom";
+        $ex = $bd->prepare($req);
+        return $ex->execute(array(
+            'nom'=>$capteur,
+            'moyenne'=>$moyenne
+        ));
+        //return $ex->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
+    static function updateMoyenneCarre(\PDO $bd, $capteur, $moyenne){
+        $req = "update ".static::$CLASS_NAME." set moyenne_carre=:moyenne where nom=:nom";
+        $ex = $bd->prepare($req);
+        return $ex->execute(array(
+            'nom'=>$capteur,
+            'moyenne'=>$moyenne
+        ));
+        //return $ex->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
+    static function updateLastId(\PDO $bd, $capteur, $id){
+        $req = "update ".static::$CLASS_NAME." set last_id=:id where nom=:nom";
+        $ex = $bd->prepare($req);
+        return $ex->execute(array(
+            'nom'=>$capteur,
+            'id'=>$id
+        ));
+        //return $ex->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
+    static function updateNormal(\PDO $bd, $capteur, $normal){
+            $req = "update ".static::$CLASS_NAME." set normale=:normal where nom=:nom";
+            $ex = $bd->prepare($req);
+            return $ex->execute(array(
+                'nom'=>$capteur,
+                'normal'=>$normal
+            ));
+            //return $ex->fetchAll(\PDO::FETCH_ASSOC);
+        }
+
 }

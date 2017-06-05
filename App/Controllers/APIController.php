@@ -39,6 +39,7 @@ class APIController extends Controller
         $dataSensorDTO->setCapteur($capteur);
         $dataSensorDTO->setValeur($request->getParam('valeur'));
         $data = $dataSensordao->putData($this->bd, $dataSensorDTO);
+
         return $response->withJson($data, 200);
     }
 
@@ -119,9 +120,11 @@ class APIController extends Controller
             $dataSensorDTO->setCapteur($sensor[$i]);
             $dataSensorDTO->setValeur($value);
             $data = $dataSensordao->putData($this->bd, $dataSensorDTO);
+            if($data)
+                $this->writeLog(static::$EVENT_SAVE_DATA, static::$TYPE_EVENT_LOG, "savedata");
             $i++;
         }
-        echo "merci pour les donnees";
+        //echo "merci pour les donnees";
 
     }
 

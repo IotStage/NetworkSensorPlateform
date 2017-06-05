@@ -1,8 +1,18 @@
-<script type="text/javascript">
 
-    Highcharts.chart('graph{{ courbe.id }}', {
+<script type="text/javascript">
+    var dd =new Date();
+    var points = [];
+
+    var init_day = 0;
+
+    var frequence = 20*1000;
+
+    var sInt;//instance setInterval
+    getPlage();
+
+    var chart = new Highcharts.chart('graph{{ courbe.id }}', {
         chart: {
-            type: '{{ courbe.type }}',
+            type: 'line',
             zoomType: 'x'
         },
         title: {
@@ -10,10 +20,18 @@
         },
         subtitle: {
             text: document.ontouchstart === undefined ?
-                'cliquez et glisser pour zoomer' : 'cliquez pour dezoomer',
+                'cliquez et glisser pour zoomer' : 'cliquez pour dezoomer'
+        },
+        tooltip: {
+            formatter: function () {
+                return '<b>' + this.series.name + '</b><br/>' +
+                    Highcharts.numberFormat(this.y, 2) + " A<br/>"+
+                    Highcharts.dateFormat('prise le %d-%m-%Y à %H:%M:%S', this.x);
+            }
         },
         xAxis: {
             type: 'datetime',
+            //tickInterval: 3600 * 1000
             dateTimeLabelFormats: {
                 hour: '%a %d %b'    //ex- 01 Jan 2016
 
@@ -26,41 +44,99 @@
                 text: '{{ courbe.nom }}'
             }
         },
-    plotOptions: {
-        area: {
-            fillColor: {
-                linearGradient: {
-                    x1: 0,
-                    y1: 0,
-                    x2: 0,
-                    y2: 1
+        plotOptions: {
+            area: {
+                fillColor: {
+                    linearGradient: {
+                        x1: 0,
+                        y1: 0,
+                        x2: 0,
+                        y2: 1
+                    },
+                    stops: [
+                        [0, Highcharts.getOptions().colors[0]],
+                        [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                    ]
                 },
-                stops: [
-                    [0, Highcharts.getOptions().colors[0]],
-                    [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
-                ]
-            },
-            marker: {
-                radius: 2
-            },
-            lineWidth: 1,
-            states: {
-                hover: {
-                    lineWidth: 1
-                }
-            },
-            threshold: null
-        }
-    },
+                marker: {
+                    radius: 2
+                },
+                lineWidth: 1,
+                states: {
+                    hover: {
+                        lineWidth: 1
+                    }
+                },
+                threshold: null
+            }
+        },
         series: [{
             name: '{{ courbe.nom }}',
             type: "area",
-            data: [
-                {% for a in courbe.datas%}
-                    [{{date( a[0] ).timestamp}}, {{ a[1] }}],
-                {% endfor %}
-            ]
+            data: []
+
         }]
     });
 
+    requestData();
+
+    function requestData() {
+        console.log("get data");
+        //nouveau jour
+        if((new Date()).getDate() != dd.getDate()){
+            dd = new Date();
+            init_day = 0;
+        }
+
+        $.ajax({
+            type: "POST",
+            url: '{{ path_for("reelTimeDataSensor") }}',
+            data: {
+                "sensor" : "{{ courbe.nom }}"
+            },
+            timeout: 1000,
+            success: function(data) {
+                data = JSON.parse(data);
+                console.log("les donnees  sont ");
+                console.log(data);
+                var ii = 0;
+                var points = [];
+                for(ii=0; ii<data.length; ii++) {
+
+                    var date_heure = data[ii].heure.split(":");
+                    var date_date = data[ii].datte.split("-");
+                    var x = (new Date(
+                        parseInt(date_date[0]),
+                        parseInt(date_date[1])-1,
+                        parseInt(date_date[2]),
+                        parseInt(date_heure[0]),
+                        parseInt(date_heure[1]),
+                        parseInt(date_heure[2]))).getTime();
+                    points.push([x, Math.abs(parseFloat(data[ii].data))]);
+                }
+                chart.series[0].setData(points);
+            },
+            cache: false
+        });
+
+
+        console.log("init day:"+init_day);
+
+        if(init_day == 0){
+            init_day = 1;
+            sInt = setInterval(requestData,frequence); //chaque 30s*/
+        }
+    }
+    function getPlage(){
+        points = [];
+        var inc_heure=11, inc_minute=0, inc_seconde=0;
+        for(inc_heure=11; inc_heure<16; inc_heure++){
+            for(inc_minute=0; inc_minute<60; inc_minute++){
+                for(inc_seconde=0; inc_seconde<60; inc_seconde+=30){
+                    var temps = (new Date(dd.getFullYear(), dd.getMonth(), dd.getDate(), inc_heure, inc_minute, inc_seconde)).getTime();
+                    points.push([temps,0]);
+                }
+            }
+        }
+    }
 </script>

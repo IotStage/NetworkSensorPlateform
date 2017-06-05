@@ -14,6 +14,16 @@ use Psr\Http\Message\ResponseInterface;
 class Controller
 {
 
+    static $EVENT_SAVE_DATA="SAVE_DATA";
+    static $EVENT_SEND_CMD="SEND_CMD";
+    static $EVENT_SEND_SUP="SEND_SUP";
+    static $EVENT_GET_CTL="SEND_CTL";
+    static $EVENT_EXECUTE_ALERTE_ALGO="EXECUTE_ALERTE_ALGO";
+    static $EVENT_SEND_ALERTE="SEND_ALERTE";
+    static $TYPE_EVENT_LOG = "log";
+    static $TYPE_EVENT_ERROR="error";
+
+
     private $container;
 
     public function __construct($container)
@@ -40,4 +50,18 @@ class Controller
     }
 
 
+    /**
+     * Ecrire dans les fichiers logs
+     */
+    function writeLog($event, $type_event, $plateforme=""){
+        $date_heure = date("Y-m-d H:i:s");
+        if($type_event == "error"){
+            exec("echo \"$date_heure -> ERROR: $event\" >> /var/log/senpluvio/error.log");
+            exec("echo \"$date_heure -> ERROR: $event\" >> /var/log/lampadaire/error.log");
+        }
+        else if($type_event == "log"){
+            exec("echo \"$date_heure -> EVENT: $event\" >> /var/log/$plateforme/$plateforme.log");
+        }
+
+    }
 }

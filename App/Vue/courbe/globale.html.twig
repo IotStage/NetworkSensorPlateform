@@ -1,0 +1,74 @@
+<script type="text/javascript">
+    //$.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=new-intraday.json&callback=?', function (data) {
+
+    // create the chart
+    Highcharts.stockChart('graph{{ courbe.id }}', {
+        title: {
+            text: 'Variation du {{ courbe.nom }}'
+        },
+
+        subtitle: {
+            text: 'variation globale du {{ courbe.nom }}'
+        },
+
+        xAxis: {
+            breaks: [{ // Nights
+                to: {% for a in courbe.datas%} {% if(loop.first) %}{{date( a[0] ).timestamp}} {% endif %}{% endfor %},
+                from: {% for a in courbe.datas%} {% if(loop.last) %}{{date( a[0] ).timestamp}} {% endif %}{% endfor %},
+                repeat: 24 * 36e5
+            }, { // Weekends
+                to: {% for a in courbe.datas%} {% if(loop.first) %}{{date( a[0] ).timestamp}} {% endif %}{% endfor %},
+                from: {% for a in courbe.datas%} {% if(loop.last) %}{{date( a[0] ).timestamp}} {% endif %}{% endfor %},
+                repeat: 7 * 24 * 36e5
+            }]
+        },
+
+        rangeSelector: {
+            buttons: [{
+                type: 'hour',
+                count: 1,
+                text: '1h'
+            }, {
+                type: 'day',
+                count: 1,
+                text: '1D'
+            }, {
+                type: 'all',
+                count: 1,
+                text: 'All'
+            }],
+            selected: 1,
+            inputEnabled: false
+        },
+
+        series: [{
+            name: '{{ courbe.nom }}',
+            type: 'area',
+            data: [
+                {% for a in courbe.datas%}
+                [{{date( a[0] ).timestamp}}, {{ a[1] }}],
+                {% endfor %}
+            ],
+            gapSize: 5,
+            tooltip: {
+                valueDecimals: 2
+            },
+            fillColor: {
+                linearGradient: {
+                    x1: 0,
+                    y1: 0,
+                    x2: 0,
+                    y2: 1
+                },
+                stops: [
+                    [0, Highcharts.getOptions().colors[0]],
+                    [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                ]
+            },
+            threshold: null
+        }]
+    });
+
+
+    //});
+</script>

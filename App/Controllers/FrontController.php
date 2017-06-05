@@ -16,6 +16,7 @@ use App\Vue\Graphique;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Slim\Http\Request;
+use Slim\Http\Response;
 
 class FrontController extends Controller
 {
@@ -24,7 +25,7 @@ class FrontController extends Controller
     static $PAGE = array(
         null, 'Pages/Temps_reel.html.twig',
         'Pages/visualisation_globale.html.twig',
-        'Pages/parametre_maladies.html.twig',
+        'Pages/visualisation_seuil.html.twig',
         'Pages/exportation.html.twig'
     );
 
@@ -54,7 +55,6 @@ class FrontController extends Controller
         foreach ($donnees as $key => $value){
             $valeur[$key] = $value["valeur"]+0;
             $date[$key] = $value["date"];
-
         }
         $graphique->setSeries(
             array(
@@ -120,9 +120,21 @@ class FrontController extends Controller
                 $graphique[$key]=array(
                     'title' => "test graphique",
                     'id'    => $key,
-                    'type'    => $value->type,
+                    'type'    => $value->type_courbe,
                     'nom'   => $value->capteur,
-                    'datas'  => DataSensorsDAO::getInstance()->getSpecificDataFromCapteur($this->bd,$value->capteur ),
+                    //'datas'  => DataSensorsDAO::getInstance()->getSpecificDataFromCapteur($this->bd,$value->capteur ),
+                );
+            }
+            $this->render($response, FrontController::$PAGE[$arg["id"]], array('graph' => $graphique));
+        }elseif ($arg["id"] == 2){
+            $courbe = CourbeDOA::getInstance()->getAllDatas($this->bd);
+            foreach ($courbe as $key => $value){
+                $graphique[$key]=array(
+                    'title' => "test graphique",
+                    'id'    => $key,
+                    'type'  => $value->type_courbe,
+                    'nom'   => $value->capteur,
+                    'datas' => DataSensorsDAO::getInstance()->getSpecificDataFromCapteur($this->bd,$value->capteur ),
                 );
             }
             $this->render($response, FrontController::$PAGE[$arg["id"]], array('graph' => $graphique));
@@ -133,6 +145,13 @@ class FrontController extends Controller
 
     }
 
+
+    public function reelTimeDataSensor(Request $request, Response $response){
+        $param = $request->getParams();
+        $capteur = $param["sensor"];
+        return json_encode(DataSensorsDAO::getInstance()->getLastDataSpecificCapteur($this->bd, $capteur));
+        //var_dump(DataSensorsDAO::getInstance()->getSpecificDataFromCapteur($this->bd,"ph"));
+    }
 
 
 }

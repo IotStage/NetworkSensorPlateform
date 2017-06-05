@@ -33,6 +33,7 @@ class MaladieCapteursDOA extends DOA
         ));
         return $val;
     }
+
     public function putDatas(\PDO $bd, MaladieCapteurs $data){
         $req = "insert into ".static::$CLASS_NAME.'(id_maladie, capteur, seuil) VALUES(:id_maladie, :capteur, :seuil)';
         $ex = $bd->prepare($req);
@@ -44,7 +45,6 @@ class MaladieCapteursDOA extends DOA
         return $val;
     }
 
-
     public function deleteDatas(\PDO $bd, MaladieCapteurs $data){
         $req = "delete from ".static::$CLASS_NAME.' where id=:id';
         //var_dump($req);
@@ -55,6 +55,7 @@ class MaladieCapteursDOA extends DOA
 
         return $val;
     }
+
     static function getInstance(){
         if(!isset($_SESSION['INSTANCE_OF_'.static::$CLASS_NAME])){
             $class = __CLASS__;
@@ -72,5 +73,18 @@ class MaladieCapteursDOA extends DOA
 
         return $ex->fetchAll(\PDO::FETCH_CLASS, __CLASS__);
     }
+
+    static function getSeuilFromSpecificSensor(\PDO $bd, $capteur, $nom){
+        $id = MaladieDOA::getMaladieByName($bd,$nom)[0]['id'];
+        $req = "SELECT seuil from ".static::$CLASS_NAME." where id_maladie = :id and capteur=:capteur";
+        $ex = $bd->prepare($req);
+        $val= $ex->execute(array(
+            'id'=> $id,
+            'capteur'=> $capteur
+        ));
+
+        return $ex->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
 
 }

@@ -56,6 +56,9 @@ $app->post('/admin/editGraph',\App\Controllers\AdminController::class. ':editGra
 $app->post('/admin/sendSUP', \App\Controllers\AdminController::class. ':sendSUP');
 $app->post('/admin/sendCMD', \App\Controllers\AdminController::class. ':sendCMD');
 $app->post('/admin/seuil', \App\Controllers\AdminController::class. ':seuil')->setName("seuil");
+$app->post('/reelTimeDataSensor', FrontController::class. ':reelTimeDataSensor')->setName("reelTimeDataSensor");
+
+$app->get('/alerte', \App\Process\Processus::class. ':process')->setName("alerte");
 
 
 

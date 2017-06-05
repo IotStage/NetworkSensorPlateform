@@ -74,4 +74,15 @@ class MaladieDOA extends DOA
         ));
         return $ex->fetch(\PDO::FETCH_CLASS, __CLASS__);
     }
+
+    static function getMaladieByName(\PDO $bd, $nom){
+        $req = "SELECT id FROM ".static::$CLASS_NAME." where nom=:nom";
+        $ex = $bd->prepare($req);
+        $ex->execute(array(
+           'nom'=>$nom
+        ));
+        return $ex->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
+
 }
