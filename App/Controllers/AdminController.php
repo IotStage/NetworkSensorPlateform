@@ -24,12 +24,17 @@ use App\DataBase\Table\DTO\Supervision;
 use Slim\Http\Request;
 use Slim\Http\Response;
 
+session_start();
+
 class AdminController extends Controller
 {
 
     public function home(Request $request, Response $response)
     {
-       $this->render($response, 'admin/index.html.twig');
+       //% if(isset($this->session['connecte']))
+            $this->render($response, 'admin/index.html.twig');
+       //% $url = $this->router->pathFor('graph_tab', ['id' => 1]);
+       // $response->withStatus(302)->withHeader('Location', $url);
     }
 
     public function graph(Request $request, Response $response){

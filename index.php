@@ -8,6 +8,8 @@
 
 use App\Controllers\FrontController;
 use App\Controllers\APIController;
+use Slim\Http\Request;
+use Slim\Http\Response;
 
 require './vendor/autoload.php';
 
@@ -20,8 +22,15 @@ $app = new Slim\App([
 
 require './App/container.php';
 
-$app->get('/', FrontController::class. ':home');
+$app->get('/', FrontController::class. ':home')->setName("home");
 $app->get('/graph', FrontController::class. ':visualisationWithSpecificCapteur')->setName('graph');
+$app->get('/page', function (Request $req,  Response $res, $args = []){
+    if($req->getParam('page') == "export") $id = 5;
+    else $id = 1;
+    $url = $this->router->pathFor('graph_tab', ['id' => $id]);
+    return $res->withStatus(302)->withHeader('Location', $url);
+})->setName('page');
+//$app->get('/page', FrontController::class. ':visualisationTab')->setName('Export');
 $app->get('/graph/tab/{id}', FrontController::class. ':visualisationTab')->setName('graph_tab');
 
 
@@ -59,6 +68,13 @@ $app->post('/admin/seuil', \App\Controllers\AdminController::class. ':seuil')->s
 $app->post('/reelTimeDataSensor', FrontController::class. ':reelTimeDataSensor')->setName("reelTimeDataSensor");
 
 $app->get('/alerte', \App\Process\Processus::class. ':process')->setName("alerte");
+
+$app->get('/login', \App\Controllers\BackController::class. ':login')->setName("login");
+$app->get('/suscribe', \App\Controllers\BackController::class. ':suscribe')->setName("suscribe");
+
+$app->post('/login', \App\Controllers\BackController::class. ':login')->setName("login");
+$app->post('/suscribe', \App\Controllers\BackController::class. ':suscribe')->setName("suscribe");
+
 
 
 

@@ -19,165 +19,28 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
+      <file leaf-file-name="visualisation_seuil.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/App/Vue/Pages/visualisation_seuil.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="60" column="18" lean-forward="false" selection-start-line="60" selection-start-column="18" selection-end-line="60" selection-end-column="18" />
-              <folding>
-                <element signature="e#6#85#0#PHP" expanded="true" />
-                <element signature="e#87#123#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="APIController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/App/Controllers/APIController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-133">
-              <caret line="123" column="88" lean-forward="false" selection-start-line="123" selection-start-column="88" selection-end-line="123" selection-end-column="88" />
-              <folding>
-                <element signature="e#551#954#0#PHP" expanded="false" />
-                <element signature="e#1413#1659#0#PHP" expanded="false" />
-                <element signature="e#1665#1961#0#PHP" expanded="false" />
-                <element signature="e#1967#2537#0#PHP" expanded="false" />
-                <element signature="e#2543#3683#0#PHP" expanded="false" />
-                <element signature="e#4624#4954#0#PHP" expanded="false" />
-                <element signature="e#5340#5732#0#PHP" expanded="false" />
-                <element signature="e#5738#6140#0#PHP" expanded="false" />
-                <element signature="e#6146#6226#0#PHP" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CourbeDOA.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/App/DataBase/Table/DAO/CourbeDOA.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="24" column="72" lean-forward="false" selection-start-line="24" selection-start-column="61" selection-end-line="24" selection-end-column="72" />
-              <folding>
-                <marker date="1496135104000" expanded="true" signature="272:286" ph="SELECT * FRO... ${static::$CLASS_NAME}" />
-                <marker date="1496135104000" expanded="true" signature="477:558" ph="insert into ${static::$CLASS_NAME}... " />
-                <marker date="1496135104000" expanded="true" signature="1269:1317" ph="delete from " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Processus.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/App/Process/Processus.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="34" column="78" lean-forward="false" selection-start-line="34" selection-start-column="78" selection-end-line="34" selection-end-column="78" />
-              <folding>
-                <element signature="e#7#86#0#PHP" expanded="true" />
-                <element signature="e#111#142#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Controller.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/App/Controllers/Controller.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-403">
-              <caret line="22" column="33" lean-forward="false" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+            <state relative-caret-position="290">
+              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MaladieCapteursDOA.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/App/DataBase/Table/DAO/MaladieCapteursDOA.php">
+      <file leaf-file-name="AdminController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/App/Controllers/AdminController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="74" column="5" lean-forward="false" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
+            <state relative-caret-position="200">
+              <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
               <folding>
-                <element signature="e#256#564#0#PHP" expanded="false" />
-                <element signature="e#570#1047#0#PHP" expanded="false" />
-                <element signature="e#1053#1473#0#PHP" expanded="false" />
-                <element signature="e#1479#1775#0#PHP" expanded="false" />
-                <marker date="1496636965000" expanded="true" signature="311:464" ph="select malad... maladie_capteur" />
-                <marker date="1496636965000" expanded="true" signature="1128:1229" ph="insert into ${static::$CLASS_NAME}... " />
-                <marker date="1496636965000" expanded="true" signature="1557:1605" ph="delete from " />
-                <marker date="1496636965000" expanded="true" signature="2152:2165" ph="SELECT * fro... " />
-                <marker date="1496636965000" expanded="true" signature="2152:2166" ph="SELECT * fro... ${static::$CLASS_NAME}" />
-                <marker date="1496636965000" expanded="true" signature="2152:2195" ph="SELECT * fro... ${static::$CLASS_NAME}" />
-                <marker date="1496636965000" expanded="true" signature="2152:2196" ph="SELECT * fro... ${static::$CLASS_NAME}" />
-                <marker date="1496636965000" expanded="true" signature="2152:2212" ph="SELECT * fro... ${static::$CLASS_NAME}" />
-                <marker date="1496636965000" expanded="true" signature="2152:2213" ph="SELECT * fro... ${static::$CLASS_NAME}" />
-                <marker date="1496636965000" expanded="true" signature="2539:2603" ph="SELECT * fro... ${static::$CLASS_NAME}" />
-                <marker date="1496636965000" expanded="true" signature="2539:2617" ph="SELECT seuil... ${static::$CLASS_NAME}" />
-                <marker date="1496636965000" expanded="true" signature="2539:2624" ph="SELECT seuil... ${static::$CLASS_NAME}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MaladieDOA.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/App/DataBase/Table/DAO/MaladieDOA.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="17" column="31" lean-forward="false" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="31" />
-              <folding>
-                <marker date="1496636801000" expanded="true" signature="287:301" ph="SELECT * FRO... ${static::$CLASS_NAME}" />
-                <marker date="1496636801000" expanded="true" signature="494:573" ph="insert into ${static::$CLASS_NAME}... " />
-                <marker date="1496636801000" expanded="true" signature="1289:1337" ph="delete from " />
-                <marker date="1496636801000" expanded="true" signature="1868:1882" ph="SELECT * FRO... ${static::$CLASS_NAME}" />
-                <marker date="1496636801000" expanded="true" signature="1868:1918" ph="SELECT * FRO... ${static::$CLASS_NAME}" />
-                <marker date="1496636801000" expanded="true" signature="2150:2203" ph="SELECT id FR... ${static::$CLASS_NAME}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DataSensorsDAO.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/App/DataBase/Table/DAO/DataSensorsDAO.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-              <folding>
-                <element signature="e#781#970#0#PHP" expanded="false" />
-                <element signature="e#976#1432#0#PHP" expanded="false" />
-                <element signature="e#1438#1901#0#PHP" expanded="false" />
-                <element signature="e#1907#2891#0#PHP" expanded="false" />
-                <element signature="e#2897#3154#0#PHP" expanded="false" />
-                <element signature="e#3160#3801#0#PHP" expanded="false" />
-                <element signature="e#3807#3912#0#PHP" expanded="false" />
-                <element signature="e#3918#4018#0#PHP" expanded="false" />
-                <element signature="e#4024#4253#0#PHP" expanded="false" />
-                <element signature="e#4259#4585#0#PHP" expanded="false" />
-                <element signature="e#4591#5462#0#PHP" expanded="false" />
-                <marker date="1496639471000" expanded="true" signature="318:409" ph="insert into ${static::$CLASS_NAME}... " />
-                <marker date="1496639471000" expanded="true" signature="836:850" ph="SELECT * FRO... ${static::$CLASS_NAME}" />
-                <marker date="1496639471000" expanded="true" signature="1048:1108" ph="SELECT * FRO... ${static::$CLASS_NAME}" />
-                <marker date="1496639471000" expanded="true" signature="1518:1589" ph="SELECT valeu... " />
-                <marker date="1496639471000" expanded="true" signature="1987:2115" ph="SELECT valeu... " />
-                <marker date="1496639471000" expanded="true" signature="3251:3322" ph="SELECT * FRO... ${static::$CLASS_NAME}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CapteurDOA.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/App/DataBase/Table/DAO/CapteurDOA.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="39" column="62" lean-forward="false" selection-start-line="39" selection-start-column="62" selection-end-line="39" selection-end-column="62" />
-              <folding>
-                <element signature="e#195#384#0#PHP" expanded="false" />
-                <element signature="e#390#671#0#PHP" expanded="false" />
-                <element signature="e#677#955#0#PHP" expanded="false" />
-                <element signature="e#1299#1643#0#PHP" expanded="false" />
-                <element signature="e#1649#2004#0#PHP" expanded="false" />
-                <element signature="e#2010#2333#0#PHP" expanded="false" />
-                <element signature="e#2339#2710#0#PHP" expanded="false" />
-                <marker date="1496636541000" expanded="true" signature="250:264" ph="SELECT * FRO... ${static::$CLASS_NAME}" />
-                <marker date="1496636541000" expanded="true" signature="744:794" ph="SELECT * FRO... ${static::$CLASS_NAME}" />
-                <marker date="1496636541000" expanded="true" signature="1044:1134" ph="SELECT moyen... ${static::$CLASS_NAME}" />
-                <marker date="1496636541000" expanded="true" signature="1382:1442" ph="SELECT moyen... ${static::$CLASS_NAME}" />
+                <element signature="e#1679#2364#0#PHP" expanded="false" />
+                <element signature="e#2370#2965#0#PHP" expanded="false" />
+                <element signature="e#2971#3494#0#PHP" expanded="false" />
+                <element signature="e#3500#4285#0#PHP" expanded="false" />
+                <element signature="e#4291#4537#0#PHP" expanded="false" />
+                <element signature="e#4543#6656#0#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -224,18 +87,20 @@
       <command text="composer dump-autoload" />
       <command text="composer require slim/twig-view" />
       <command text="composer require slim/flash" />
+      <command text="pwd" />
+      <command text="composer require bryanjhv/slim-session:~3.0" />
+      <command text="php composer.phar require bryanjhv/slim-session:~3.0" />
     </commandsHistory>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="dummy://restClient/response193.html" root0="SKIP_INSPECTION" />
+    <setting file="mock:///Dummy.txt" root0="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/App/Vue/header.admin.twig" />
-        <option value="$PROJECT_DIR$/App/Constantes.php" />
-        <option value="$PROJECT_DIR$/App/DataBase/Table/DTO/Courbe.php" />
-        <option value="$PROJECT_DIR$/App/DataBase/Table/DAO/DOA.php" />
         <option value="$PROJECT_DIR$/App/DataBase/Table/DAO/CourbeDOA.php" />
         <option value="$PROJECT_DIR$/App/DataBase/Table/DTO/Commande.php" />
         <option value="$PROJECT_DIR$/public/dist_admin/css/style.css" />
@@ -255,18 +120,14 @@
         <option value="$PROJECT_DIR$/App/DataBase/Table/DTO/Maladie.php" />
         <option value="$PROJECT_DIR$/App/Vue/admin/seuil.html.twig" />
         <option value="$PROJECT_DIR$/App/Vue/Pages/home.html.twig" />
-        <option value="$PROJECT_DIR$/App/Controllers/AdminController.php" />
-        <option value="$PROJECT_DIR$/App/container.php" />
         <option value="$PROJECT_DIR$/App/Vue/Graphique.php" />
         <option value="$PROJECT_DIR$/App/Vue/Pages/courbe/pie.html.twig" />
         <option value="$PROJECT_DIR$/App/Vue/Pages/courbe/column.html.twig" />
         <option value="$PROJECT_DIR$/App/Vue/Pages/courbe/line.html.twig" />
         <option value="$PROJECT_DIR$/App/Vue/template.html.twig" />
-        <option value="$PROJECT_DIR$/App/Vue/nav.html.twig" />
         <option value="$PROJECT_DIR$/App/Vue/base.html.twig" />
         <option value="$PROJECT_DIR$/App/Vue/courbe/line.html.twig" />
         <option value="$PROJECT_DIR$/App/Vue/courbe/column.html.twig" />
-        <option value="$PROJECT_DIR$/App/Controllers/FrontController.php" />
         <option value="$PROJECT_DIR$/App/Vue/courbe/globale.html.twig" />
         <option value="$PROJECT_DIR$/App/Vue/graph.panel.twig" />
         <option value="$PROJECT_DIR$/App/Vue/Pages/visualisation.html.twig" />
@@ -278,11 +139,19 @@
         <option value="$PROJECT_DIR$/App/DataBase/Table/DAO/CapteurDOA.php" />
         <option value="$PROJECT_DIR$/App/DataBase/Table/DAO/MaladieDOA.php" />
         <option value="$PROJECT_DIR$/App/DataBase/Table/DAO/MaladieCapteursDOA.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/App/Process/Processus.php" />
         <option value="$PROJECT_DIR$/App/Controllers/Controller.php" />
         <option value="$PROJECT_DIR$/App/DataBase/Table/DAO/DataSensorsDAO.php" />
         <option value="$PROJECT_DIR$/App/Controllers/APIController.php" />
+        <option value="$PROJECT_DIR$/App/DataBase/Table/DTO/Utilisateur.php" />
+        <option value="$PROJECT_DIR$/App/DataBase/Table/DAO/UtilisateurDOA.php" />
+        <option value="$PROJECT_DIR$/App/Vue/Pages/suscribe.html.twig" />
+        <option value="$PROJECT_DIR$/App/Vue/nav.html.twig" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/App/container.php" />
+        <option value="$PROJECT_DIR$/App/Controllers/FrontController.php" />
+        <option value="$PROJECT_DIR$/App/Controllers/BackController.php" />
+        <option value="$PROJECT_DIR$/App/Controllers/AdminController.php" />
       </list>
     </option>
   </component>
@@ -309,11 +178,13 @@
       <path value="$PROJECT_DIR$/vendor/slim/twig-view" />
       <path value="$PROJECT_DIR$/vendor/twig/twig" />
       <path value="$PROJECT_DIR$/vendor/slim/flash" />
+      <path value="$PROJECT_DIR$/vendor/bryanjhv/slim-session" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
     <option name="width" value="1280" />
-    <option name="height" value="800" />
+    <option name="height" value="726" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -372,6 +243,46 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Vue" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="slim" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="slim" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Vue" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Pages" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="slim" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="slim" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="App" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="DataBase" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -395,36 +306,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Table" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DTO" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="slim" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="slim" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="App" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DataBase" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Table" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DAO" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -451,12 +332,11 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="sshConsole" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="SearchEverywhereHistoryKey" value="nav-hover&#9;null&#9;null&#10;getParam&#9;null&#9;null" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="FullScreen" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -803,37 +683,38 @@
       <workItem from="1496063571098" duration="5076000" />
       <workItem from="1496268862103" duration="3315000" />
       <workItem from="1496280866937" duration="3372000" />
-      <workItem from="1496290415813" duration="66743000" />
+      <workItem from="1496290415813" duration="67297000" />
+      <workItem from="1498781559417" duration="5067000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="137819000" />
+    <option name="totallyTimeSpent" value="143440000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="false" />
+    <frame x="0" y="23" width="1280" height="726" extended-state="0" />
+    <editor active="true" />
     <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43049327" sideWeight="0.503125" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="REST Client" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45019922" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43049327" sideWeight="0.496875" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="CSS Styles" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.72908366" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2739726" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43049327" sideWeight="0.496875" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2749004" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="REST Client" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45019922" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="CSS Styles" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.72908366" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -844,71 +725,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/App/Controllers/FrontController.php</url>
-          <line>72</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="7" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/App/DataBase/Table/DTO/DataSensors.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="22" column="22" lean-forward="false" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/PDO.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="813" column="20" lean-forward="false" selection-start-line="813" selection-start-column="20" selection-end-line="813" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/DataBase/Table/DTO/Commande.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="14" column="11" lean-forward="false" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Vue/base.admin.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="596">
-          <caret line="68" column="29" lean-forward="false" selection-start-line="68" selection-start-column="29" selection-end-line="68" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/dist_admin/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="23" lean-forward="false" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Vue/admin/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="63" column="16" lean-forward="false" selection-start-line="63" selection-start-column="16" selection-end-line="63" selection-end-column="16" />
-          <folding>
-            <element signature="e#310#332#0#HTML" expanded="false" />
-            <element signature="e#826#848#0#HTML" expanded="false" />
-            <element signature="e#1322#1344#0#HTML" expanded="false" />
-            <element signature="e#1819#1841#0#HTML" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/App/DataBase/Table/DTO/Supervision.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -922,7 +743,7 @@
         <state relative-caret-position="420">
           <caret line="33" column="83" lean-forward="true" selection-start-line="33" selection-start-column="83" selection-end-line="33" selection-end-column="83" />
           <folding>
-            <element signature="e#123#159#0#PHP" expanded="true" />
+            <element signature="e#123#159#0#PHP" expanded="false" />
             <marker date="1496388023000" expanded="true" signature="317:331" ph="SELECT * FRO... ${static::$CLASS_NAME}" />
             <marker date="1496388023000" expanded="true" signature="524:585" ph="insert into ${static::$CLASS_NAME}... " />
             <marker date="1496388023000" expanded="true" signature="930:978" ph="delete from " />
@@ -956,7 +777,7 @@
         <state relative-caret-position="-304">
           <caret line="24" column="44" lean-forward="false" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
           <folding>
-            <element signature="e#123#159#0#PHP" expanded="true" />
+            <element signature="e#123#159#0#PHP" expanded="false" />
             <marker date="1496388042000" expanded="true" signature="321:335" ph="SELECT * FRO... ${static::$CLASS_NAME}" />
             <marker date="1496388042000" expanded="true" signature="530:597" ph="insert into ${static::$CLASS_NAME}... " />
             <marker date="1496388042000" expanded="true" signature="530:632" ph="insert into ${static::$CLASS_NAME}... " />
@@ -975,7 +796,7 @@
         <state relative-caret-position="338">
           <caret line="73" column="63" lean-forward="false" selection-start-line="73" selection-start-column="63" selection-end-line="73" selection-end-column="63" />
           <folding>
-            <element signature="e#123#159#0#PHP" expanded="true" />
+            <element signature="e#123#159#0#PHP" expanded="false" />
             <marker date="1496421791000" expanded="true" signature="363:377" ph="SELECT * FRO... ${static::$CLASS_NAME}" />
             <marker date="1496421791000" expanded="true" signature="573:659" ph="insert into ${static::$CLASS_NAME}... " />
             <marker date="1496421791000" expanded="true" signature="1251:1299" ph="delete from " />
@@ -1008,7 +829,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="30" column="47" lean-forward="false" selection-start-line="30" selection-start-column="47" selection-end-line="30" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1024,7 +844,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="251">
           <caret line="20" column="14" lean-forward="true" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1032,7 +851,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="27" lean-forward="true" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1040,7 +858,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="575">
           <caret line="54" column="39" lean-forward="false" selection-start-line="54" selection-start-column="39" selection-end-line="54" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1048,10 +865,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="395">
           <caret line="83" column="0" lean-forward="true" selection-start-line="23" selection-start-column="40" selection-end-line="83" selection-end-column="0" />
-          <folding>
-            <element signature="e#1426#4259#0#HTML" expanded="false" />
-            <element signature="e#4313#6119#0#HTML" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1059,43 +872,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="521">
           <caret line="211" column="66" lean-forward="true" selection-start-line="211" selection-start-column="66" selection-end-line="211" selection-end-column="66" />
-          <folding>
-            <element signature="e#65#1707#0#Twig" expanded="false" />
-            <element signature="e#13929#16833#0#HTML" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/DataBase/Table/DAO/DOA.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="17" column="51" lean-forward="true" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Vue/Pages/home.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Controllers/AdminController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="69" column="68" lean-forward="false" selection-start-line="69" selection-start-column="68" selection-end-line="69" selection-end-column="68" />
-          <folding>
-            <element signature="e#116#135#0#PHP" expanded="true" />
-            <element signature="e#676#804#0#PHP" expanded="false" />
-            <element signature="e#1471#2156#0#PHP" expanded="false" />
-            <element signature="e#2162#2757#0#PHP" expanded="false" />
-            <element signature="e#2763#3286#0#PHP" expanded="false" />
-            <element signature="e#3292#4077#0#PHP" expanded="false" />
-            <element signature="e#4083#4329#0#PHP" expanded="false" />
-            <element signature="e#4335#6448#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1107,19 +883,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/container.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="29" column="2" lean-forward="false" selection-start-line="29" selection-start-column="2" selection-end-line="29" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/App/Vue/courbe/pie.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1127,7 +894,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1135,7 +901,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1143,7 +908,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="39" lean-forward="false" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1151,7 +915,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1159,9 +922,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#3770#4259#0#HTML" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1177,31 +937,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="67" lean-forward="false" selection-start-line="3" selection-start-column="67" selection-end-line="3" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Vue/Pages/exportation.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="40" lean-forward="false" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Vue/nav.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Vue/menu.graph.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="68" lean-forward="true" selection-start-line="12" selection-start-column="68" selection-end-line="12" selection-end-column="68" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1209,7 +944,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="60" lean-forward="false" selection-start-line="6" selection-start-column="60" selection-end-line="6" selection-end-column="60" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1217,7 +951,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="38" lean-forward="false" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1225,25 +958,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="44" lean-forward="false" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Vue/Pages/visualisation_seuil.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/Controllers/FrontController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="124" column="22" lean-forward="false" selection-start-line="124" selection-start-column="22" selection-end-line="124" selection-end-column="22" />
-          <folding>
-            <element signature="e#1977#3273#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1292,7 +1006,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/App/DataBase/Table/DAO/MaladieCapteursDOA.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
+        <state relative-caret-position="540">
           <caret line="74" column="5" lean-forward="false" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
           <folding>
             <element signature="e#256#564#0#PHP" expanded="false" />
@@ -1315,24 +1029,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="60" column="18" lean-forward="false" selection-start-line="60" selection-start-column="18" selection-end-line="60" selection-end-column="18" />
-          <folding>
-            <element signature="e#6#85#0#PHP" expanded="true" />
-            <element signature="e#87#123#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/App/Process/Processus.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
+        <state relative-caret-position="345">
           <caret line="34" column="78" lean-forward="false" selection-start-line="34" selection-start-column="78" selection-end-line="34" selection-end-column="78" />
           <folding>
-            <element signature="e#7#86#0#PHP" expanded="true" />
-            <element signature="e#111#142#0#PHP" expanded="true" />
+            <element signature="e#7#86#0#PHP" expanded="false" />
+            <element signature="e#111#142#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1349,9 +1052,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/App/Controllers/Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="22" column="33" lean-forward="false" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Controllers/APIController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="144" column="42" lean-forward="true" selection-start-line="144" selection-start-column="42" selection-end-line="144" selection-end-column="42" />
+          <folding>
+            <element signature="e#551#954#0#PHP" expanded="false" />
+            <element signature="e#1413#1659#0#PHP" expanded="false" />
+            <element signature="e#1665#1961#0#PHP" expanded="false" />
+            <element signature="e#1967#2537#0#PHP" expanded="false" />
+            <element signature="e#2543#3683#0#PHP" expanded="false" />
+            <element signature="e#4624#4954#0#PHP" expanded="false" />
+            <element signature="e#5340#5732#0#PHP" expanded="false" />
+            <element signature="e#5738#6140#0#PHP" expanded="false" />
+            <element signature="e#6146#6226#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/App/DataBase/Table/DAO/DataSensorsDAO.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
+        <state relative-caret-position="390">
           <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding>
             <element signature="e#781#970#0#PHP" expanded="false" />
@@ -1375,28 +1104,150 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/Controllers/Controller.php">
+    <entry file="file://$PROJECT_DIR$/App/DataBase/Table/DAO/DOA.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-403">
-          <caret line="22" column="33" lean-forward="false" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+        <state relative-caret-position="90">
+          <caret line="11" column="15" lean-forward="false" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/Controllers/APIController.php">
+    <entry file="file://$PROJECT_DIR$/App/DataBase/Table/DTO/Utilisateur.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-133">
-          <caret line="123" column="88" lean-forward="false" selection-start-line="123" selection-start-column="88" selection-end-line="123" selection-end-column="88" />
+        <state relative-caret-position="2190">
+          <caret line="151" column="0" lean-forward="false" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Vue/Pages/suscribe.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="35" column="52" lean-forward="false" selection-start-line="35" selection-start-column="52" selection-end-line="35" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Vue/Pages/login.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/DataBase/Table/DAO/UtilisateurDOA.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="40" column="17" lean-forward="false" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
           <folding>
-            <element signature="e#551#954#0#PHP" expanded="false" />
-            <element signature="e#1413#1659#0#PHP" expanded="false" />
-            <element signature="e#1665#1961#0#PHP" expanded="false" />
-            <element signature="e#1967#2537#0#PHP" expanded="false" />
-            <element signature="e#2543#3683#0#PHP" expanded="false" />
-            <element signature="e#4624#4954#0#PHP" expanded="false" />
-            <element signature="e#5340#5732#0#PHP" expanded="false" />
-            <element signature="e#5738#6140#0#PHP" expanded="false" />
-            <element signature="e#6146#6226#0#PHP" expanded="false" />
+            <marker date="1498782583000" expanded="true" signature="299:313" ph="SELECT * FRO... ${static::$CLASS_NAME}" />
+            <marker date="1498782583000" expanded="true" signature="796:935" ph="insert into ${static::$CLASS_NAME}... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Vue/menu.graph.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="36" lean-forward="false" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="36" />
+          <folding>
+            <element signature="n#style#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Vue/Pages/exportation.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="40" lean-forward="false" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Vue/Pages/home.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="14" lean-forward="false" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/container.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Vue/header.admin.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="885">
+          <caret line="59" column="38" lean-forward="false" selection-start-line="59" selection-start-column="38" selection-end-line="59" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Vue/nav.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="71" lean-forward="false" selection-start-line="22" selection-start-column="71" selection-end-line="22" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="29" column="4" lean-forward="false" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="62" />
+          <folding>
+            <element signature="e#6#85#0#PHP" expanded="true" />
+            <element signature="e#87#123#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Controllers/FrontController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="20" column="16" lean-forward="false" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+          <folding>
+            <element signature="e#116#135#0#PHP" expanded="true" />
+            <element signature="e#2050#3346#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Controllers/BackController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="20" column="8" lean-forward="false" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+          <folding>
+            <element signature="e#440#941#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Vue/Pages/visualisation_seuil.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/Controllers/AdminController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding>
+            <element signature="e#1679#2364#0#PHP" expanded="false" />
+            <element signature="e#2370#2965#0#PHP" expanded="false" />
+            <element signature="e#2971#3494#0#PHP" expanded="false" />
+            <element signature="e#3500#4285#0#PHP" expanded="false" />
+            <element signature="e#4291#4537#0#PHP" expanded="false" />
+            <element signature="e#4543#6656#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -18,13 +18,17 @@ use Psr\Http\Message\ResponseInterface;
 use Slim\Http\Request;
 use Slim\Http\Response;
 
+session_start();
+
 class FrontController extends Controller
 {
 
 
     static $PAGE = array(
-        null, 'Pages/Temps_reel.html.twig',
+        null,
+        'Pages/Temps_reel.html.twig',
         'Pages/visualisation_globale.html.twig',
+        'Pages/visualisation_seuil.html.twig',
         'Pages/visualisation_seuil.html.twig',
         'Pages/exportation.html.twig'
     );
@@ -110,9 +114,17 @@ class FrontController extends Controller
      * @param ResponseInterface $response
      * @param $arg
      */
-    public function visualisationTab(RequestInterface $request, ResponseInterface $response, $arg){
+    public function visualisationTab(Request $request, Response $response, $arg){
         $graph = array();
         //$all = array();
+        if(!isset($arg)) {
+
+            if ($request->getParam('page') == "visualisation") {
+                $this->render($response, FrontController::$PAGE[1], array('graph' => null));
+            } else if ($request->getParam('page') == "export") {
+                $this->render($response, FrontController::$PAGE[4], array('graph' => null));
+            }
+        }
         $graphique= array();
         if($arg["id"] == 1){
             $courbe = CourbeDOA::getInstance()->getAllDatas($this->bd);

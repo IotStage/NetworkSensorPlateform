@@ -27,4 +27,8 @@ $container['view'] = function ($container) {
     return $view;
 };
 
+$container['session'] = function ($c) {
+    return new \SlimSession\Helper;
+};
+
 //$twig->addExtension(new Twig_Extension_Debug());

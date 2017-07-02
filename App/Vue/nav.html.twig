@@ -18,12 +18,11 @@
             <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
                 <nav>
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="graph?capteur1=humidite">Humidite</a></li>
-                        <li><a href="graph?capteur2=ph" class="scroll">PH</a></li>
-                        <li><a href="graph?capteur3=ORP" class="scroll">ORP</a></li>
-                        <li><a href="graph?capteur4=conductivite_electrique" class="scroll">EC</a></li>
-                        <li><a href="#events" class="scroll">Events</a></li>
-                        <li><a href="#mail" class="scroll">Mail Us</a></li>
+                        <li class="active"><a href="{{ path_for("home") }}"><i class="fa fa-home fa-2x"></i>Accueil</a></li>
+                        <li><a href="{{ path_for("page") }}?page=visualisation" class="scroll">Visualisation</a></li>
+                        <li><a href="{{ path_for("page") }}?page=export" class="scroll">Export/Import</a></li>
+                        <li><a href="{{ path_for("login") }}" class="scroll">Connexion</a></li>
+
                     </ul>
                 </nav>
             </div>

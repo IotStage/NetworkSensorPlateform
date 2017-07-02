@@ -1,0 +1,51 @@
+ <!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Connexion</title>
+<style type="text/css">
+   	{% include 'css.twig'%}
+   </style>
+  
+</head>
+
+<body>
+  <hgroup>
+  <h1>Insciption WQM Plateforme</h1>
+  <h3>Bienvenue</h3>
+</hgroup>
+<form method="post">
+  <div class="group">
+    <input type="text" name="nom"><span class="highlight"></span><span class="bar"></span>
+    <label>Nom</label>
+  </div>
+  <div class="group">
+    <input type="text" name="prenom"><span class="highlight"></span><span class="bar"></span>
+    <label>Prenom</label>
+  </div>
+  <div class="group">
+    <input type="number" name="telephone"><span class="highlight"></span><span class="bar"></span>
+    <label>Telephone</label>
+  </div>
+  <div class="group">
+    <input type="email" name="mail"><span class="highlight"></span><span class="bar"></span>
+    <label>Email</label>
+  </div>
+  <div class="group">
+    <input type="password" name="password"><span class="highlight"></span><span class="bar"></span>
+    <input type="hidden" name="profil" value="SEARCH"><span class="highlight"></span><span class="bar"></span>
+    <label>Mot de passe</label>
+  </div>
+
+  <button type="submit" class="button buttonBlue">Enregistrer
+    <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+  </button>
+</form>
+<footer></footer>
+<script type="text/javascript" src="{{ base_url() }}/public/dist/js/jquery.min.js"></script>
+<script type="text/javascript">
+	{% include 'js.twig'%} 
+</script>	
+</body>
+</html>
+
