@@ -18,9 +18,9 @@
             <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
                 <nav>
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="{{ path_for("home") }}"><i class="fa fa-home fa-2x"></i>Accueil</a></li>
-                        <li><a href="{{ path_for("page") }}?page=visualisation" class="scroll">Visualisation</a></li>
-                        <li><a href="{{ path_for("page") }}?page=export" class="scroll">Export/Import</a></li>
+                        <li {% if(id==1) %} class="active" {% endif %}><a href="{{ path_for("home") }}"><i class="fa fa-home fa-2x"></i>Accueil</a></li>
+                        <li {% if(id==2) %} class="active" {% endif %}><a href="{{ path_for("page") }}?page=visualisation" class="scroll">Visualisation</a></li>
+                        <li {% if(id==3) %} class="active" {% endif %}><a href="{{ path_for("export") }}" class="scroll">Export/Import</a></li>
                         <li><a href="{{ path_for("login") }}" class="scroll">Connexion</a></li>
 
                     </ul>

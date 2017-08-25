@@ -20,12 +20,12 @@
         },
         subtitle: {
             text: document.ontouchstart === undefined ?
-                'cliquez et glisser pour zoomer' : 'cliquez pour dezoomer'
+                'cliquez et glissez pour zoomer' : 'cliquez pour dezoomer'
         },
         tooltip: {
             formatter: function () {
                 return '<b>' + this.series.name + '</b><br/>' +
-                    Highcharts.numberFormat(this.y, 2) + " A<br/>"+
+                    Highcharts.numberFormat(this.y, 2)+"{{ courbe.unite }}<br/>"+
                     Highcharts.dateFormat('prise le %d-%m-%Y à %H:%M:%S', this.x);
             }
         },

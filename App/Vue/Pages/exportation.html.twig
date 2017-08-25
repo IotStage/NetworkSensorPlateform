@@ -1,39 +1,172 @@
 {% extends 'template.html.twig' %}
 {% block body%}
-<div class="row">{% include 'nav.html.twig' %}<br><br><br></div>
+<div class="row">{% include 'nav.html.twig' with {'id': 3} %}<br><br><br></div>
 {% block content %}
 <div class="row">
-    {% include "menu.graph.html.twig" %}
-    <div class="col-md-4">
-        <div class="panel panel-info panneau">
-            <div class="panel-heading">
-                <div class="valeur">
-                    <h4 style="text-align: center">Variataion du PH</h4>
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#export">exportation</button>
 
-                </div>
-            </div>
-            <div class="panel-body">
 
-                <div id="graph"></div>
-            </div>
-        </div>
-    </div>
+    <div class="modal fade"  id="export" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form method="post" action="{{ path_for("export")}}">
+                    <div class="modal-header bg-primary">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h3 class="modal-title">Exportation des données</h3>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="form-group">
+                            <div class="[ col-xs-12 col-sm-12]">
+                                <h3>Selectionner les capteur</h3><hr />
+                                <div class="[ col-xs-6 col-sm-6 ]">
+                                    <div class="[ form-group ]">
+                                        <input type="checkbox" name="ph" id="fancy-checkbox-default" autocomplete="off" />
+                                        <div class="[ btn-group ]">
+                                            <label for="fancy-checkbox-default" class="[ btn btn-default ]">
+                                                <span class="[ glyphicon glyphicon-ok ]"></span>
+                                                <span> </span>
+                                            </label>
+                                            <label for="fancy-checkbox-default" class="[ btn btn-default active ]">
+                                                Ph
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="[ form-group ]">
+                                        <input type="checkbox" name="orp" id="fancy-checkbox-primary" autocomplete="off" />
+                                        <div class="[ btn-group ]">
+                                            <label for="fancy-checkbox-primary" class="[ btn btn-default ]">
+                                                <span class="[ glyphicon glyphicon-ok ]"></span>
+                                                <span> </span>
+                                            </label>
+                                            <label for="fancy-checkbox-primary" class="[ btn btn-default active ]">
+                                                ORP
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="[ form-group ]">
+                                        <input type="checkbox" name="ec" id="fancy-checkbox-success" autocomplete="off" />
+                                        <div class="[ btn-group ]">
+                                            <label for="fancy-checkbox-success" class="[ btn btn-default ]">
+                                                <span class="[ glyphicon glyphicon-ok ]"></span>
+                                                <span> </span>
+                                            </label>
+                                            <label for="fancy-checkbox-success" class="[ btn btn-default active ]">
+                                                Conductivité
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="[ form-group ]">
+                                        <input type="checkbox" name="temperature" id="fancy-checkbox-info" autocomplete="off" />
+                                        <div class="[ btn-group ]">
+                                            <label for="fancy-checkbox-info" class="[ btn btn-default ]">
+                                                <span class="[ glyphicon glyphicon-ok ]"></span>
+                                                <span> </span>
+                                            </label>
+                                            <label for="fancy-checkbox-info" class="[ btn btn-default active ]">
+                                                température de l'eau
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="[ form-group ]">
+                                        <input type="checkbox" name="temperature_ambiante" id="fancy-checkbox-warning" autocomplete="off" />
+                                        <div class="[ btn-group ]">
+                                            <label for="fancy-checkbox-warning" class="[ btn btn-default ]">
+                                                <span class="[ glyphicon glyphicon-ok ]"></span>
+                                                <span> </span>
+                                            </label>
+                                            <label for="fancy-checkbox-warning" class="[ btn btn-default active ]">
+                                                temperature_ambiante
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="[ col-xs-6 col-sm-6 ]">
+                                    <div class="[ form-group ]">
+                                        <input type="checkbox" name="humidite" id="fancy-checkbox-danger" autocomplete="off" />
+                                        <div class="[ btn-group ]">
+                                            <label for="fancy-checkbox-danger" class="[ btn btn-default ]">
+                                                <span class="[ glyphicon glyphicon-ok ]"></span>
+                                                <span> </span>
+                                            </label>
+                                            <label for="fancy-checkbox-danger" class="[ btn btn-default active ]">
+                                                humidite
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="[ form-group ]">
+                                        <input type="checkbox" name="turbidite" id="fancy-checkbox" autocomplete="off" />
+                                        <div class="[ btn-group ]">
+                                            <label for="fancy-checkbox" class="[ btn btn-default ]">
+                                                <span class="[ glyphicon glyphicon-ok ]"></span>
+                                                <span> </span>
+                                            </label>
+                                            <label for="fancy-checkbox-danger" class="[ btn btn-default active ]">
+                                                turbidité
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="[ form-group ]">
+                                    <input type="checkbox" name="direction" id="fancy-checkbo" autocomplete="off" />
+                                    <div class="[ btn-group ]">
+                                        <label for="fancy-checkbo" class="[ btn btn-default ]">
+                                            <span class="[ glyphicon glyphicon-ok ]"></span>
+                                            <span> </span>
+                                        </label>
+                                        <label for="fancy-checkbox-danger" class="[ btn btn-default active ]">
+                                            Direction du vent
+                                        </label>
+                                    </div>
+                                </div>
+                                    <div class="[ form-group ]">
+                                            <input type="checkbox" name="vitesse" id="fancy-checkb" autocomplete="off" />
+                                            <div class="[ btn-group ]">
+                                                <label for="fancy-checkb" class="[ btn btn-default ]">
+                                                    <span class="[ glyphicon glyphicon-ok ]"></span>
+                                                    <span> </span>
+                                                </label>
+                                                <label for="fancy-checkbox-danger" class="[ btn btn-default active ]">
+                                                    Vitesse du vent
+                                                </label>
+                                            </div>
+                                        </div>
+                                    <div class="[ form-group ]">
+                                        <input type="checkbox" name="pluie" id="fancy-check" autocomplete="off" />
+                                        <div class="[ btn-group ]">
+                                            <label for="fancy-check" class="[ btn btn-default ]">
+                                                <span class="[ glyphicon glyphicon-ok ]"></span>
+                                                <span> </span>
+                                            </label>
+                                            <label for="fancy-checkbox-danger" class="[ btn btn-default active ]">
+                                                pluie
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label">Format des données</label>
+                            <select name="format" class="form-control">
+                                <option name="excel">excel</option>
+                                <option name="svg">CVS</option>
+                                <option name="json">Json</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                        <button type="submit" class="btn btn-primary">Exporter</button>
+                    </div>
+                </form>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
 </div>
 
-
-{% endblock %}
-
-{% block chart %}
-    <script type="text/javascript">
-        Highcharts.chart('graph', {{ graph | raw }});
-    </script>
-
-{% endblock %}
-{% block highchart %}
-    <script type="text/javascript" src="public/dist/js/highcharts.js"></script>
-    <script type="text/javascript" src="public/dist/js/modules/exporting.js"></script>
 {% endblock %}
 {% endblock %}
-
-
-

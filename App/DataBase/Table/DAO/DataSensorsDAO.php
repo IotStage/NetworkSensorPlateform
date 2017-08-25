@@ -31,7 +31,7 @@ class DataSensorsDAO extends DOA
 
 
         return $val;
-    }
+    } 
 
     public function getAllDatas(\PDO $bd){
         $req = "SELECT * FROM ".static::$CLASS_NAME;
@@ -53,6 +53,31 @@ class DataSensorsDAO extends DOA
          return $data;
     }
 
+    public function getDataFromManyCapteur(\PDO $bd, $capteurs){
+        $nbsensor= count($capteurs);
+        $req = "SELECT valeur, date, capteur FROM ".static::$CLASS_NAME." where ";
+        $requete="";
+        $i=0;
+        if($nbsensor>0){
+            foreach ($capteurs as $key => $value) {
+                $requete.=" capteur=:".$key;
+                if($i!=$nbsensor-1)
+                    $requete.=" or ";
+                $i++;
+            }
+
+        $req.=$requete;
+        //$req.=" order by id";
+        $ex = $bd->prepare($req);
+        $ex->execute($capteurs); 
+        return $ex->fetchAll(\PDO::FETCH_ASSOC);
+
+        
+        
+
+        }
+    }
+
     public function getSpecificDataFromCapteur(\PDO $bd, $capteur){
         $req = "SELECT valeur, date FROM ".static::$CLASS_NAME." where capteur=:capteur";
         $ex = $bd->prepare($req);
@@ -61,9 +86,8 @@ class DataSensorsDAO extends DOA
         ));
         $data=array();
         foreach ( $ex->fetchAll(\PDO::FETCH_CLASS, __CLASS__) as $key => $tourne){
-            $data[]=array($tourne->date,$tourne->valeur);
+            $data[]=array($tourne->date,$tourne->valeur+0.0);
         }
-
         return $data;
     }
 

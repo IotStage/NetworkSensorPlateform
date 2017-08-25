@@ -153,13 +153,14 @@ class AdminController extends Controller
                 //var_dump($cap); die;
                 MaladieCapteursDOA::getInstance()->putDatas($this->bd, $cap);
             }elseif (isset($val["idEditMaladie"])){
+                var_dump($val);
                 $cap = (new MaladieCapteurs())
                     ->setId($val["idEditMaladie"])
                     ->setIdMaladie($val["id_Maladie"])
                     ->setCapteur($val["capteur"])
                     ->setSeuil($val["seuil"]);
                 //var_dump($cap); die;
-                MaladieCapteursDOA::getInstance()->editData($this->bd, $cap);
+                echo MaladieCapteursDOA::getInstance()->editDatas($this->bd, $cap);
             }elseif (isset($val["idDeleteSeuil"])){
                 $cap = (new MaladieCapteurs())
                     ->setId($val["idDeleteSeuil"]);

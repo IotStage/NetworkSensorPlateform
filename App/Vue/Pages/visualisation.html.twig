@@ -1,6 +1,6 @@
 {% extends 'template.html.twig' %}
 {% block body%}
-<div class="row">{% include 'nav.html.twig' %}<br><br><br></div>
+<div class="row">{% include 'nav.html.twig' with {'id': 2}%}<br><br><br></div>
 {% block content %}
     <div class="row">
         {% include "menu.graph.html.twig" %}

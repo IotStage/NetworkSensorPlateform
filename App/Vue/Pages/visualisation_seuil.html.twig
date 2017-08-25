@@ -1,37 +1,110 @@
 {% extends 'template.html.twig' %}
 {% block body%}
-<div class="row">{% include 'nav.html.twig' %}<br><br><br></div>
+<div class="row">{% include 'nav.html.twig' with {'id': 2} %}<br><br><br></div>
 {% block content %}
 <div class="row">
-    {% include "menu.graph.html.twig" with {'id' : 4} %}
-    <div class="col-md-4">
-        <div class="panel panel-info panneau">
-            <div class="panel-heading">
-                <div class="valeur">
-                    <h4 style="text-align: center">Variataion du PH</h4>
-
+    {% include "menu.graph.html.twig" with {'id' : 3} %}
+    {% for key, sensor in datas %}
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-info panneau">
+                <div class="panel-heading">
+                    <div class="valeur">
+                        <h4 style="text-align: center">Variataion {{ sensor.nom }} par rapport au seuil</h4>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div id="graph_{{ key }}"></div>
                 </div>
             </div>
-            <div class="panel-body">
-
-                <div id="graph"></div>
-            </div>
         </div>
-    </div>
+    {% endfor %}
+
 </div>
 
 {% endblock %}
 
 {% block chart %}
-    <script type="text/javascript">
-        Highcharts.chart('graph', {{ graph | raw }});
-    </script>
+    <script>
+ {% for key, sensor in datas %}
 
+
+        var chart{{ key }} = new Highcharts.chart({
+       chart: {
+            renderTo: 'graph_{{ key }}',
+            zoomType:'x'
+        },
+
+        title: {
+            text: 'Variation du ph dans l\'année(valeurs maximales)',
+            x: -20 //center
+        },
+
+        xAxis: {
+           type: 'datetime'
+           //categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+           //     'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        },
+        yAxis: {
+            title: {
+                text: 'Valeur du {{ sensor.nom }}'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valueSuffix: '°C'
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: [{
+            type: 'line',
+            name: '{{ sensor.nom }}',
+            data: [{% for a in sensor.datas%}{{ a+0.0}}{% if(loop.last == false) %},{% endif %}{% endfor %}]
+
+        }
+        /*, {
+            name: 'New York',
+            data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
+        }, {
+            name: 'Berlin',
+            data: [-0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0]
+        }, {
+            name: 'London',
+            data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
+        }*/
+        ]
+    });
+
+   setTimeout(function() {
+        // Add plotline when you have the data you need
+        chart{{ key }}.yAxis[0].addPlotLine({
+            value : {{ sensor.seuil }},
+            color : 'green',
+            dashStyle : 'shortdash',
+            width : 2,
+            label : {
+                text : 'Seuil'
+            }
+        });
+    }, 2000);
+    //});
+        //});
+
+
+{% endfor %}
+ </script>
 {% endblock %}
-{% block highchart %}
-    <script type="text/javascript" src="public/dist/js/highcharts.js"></script>
-    <script type="text/javascript" src="public/dist/js/modules/exporting.js"></script>
-{% endblock %}
+    {% block highchart %}
+        <script type="text/javascript" src="{{ base_url() }}/public/dist/js/highcharts.js"></script>
+        <script type="text/javascript" src="{{ base_url() }}/public/dist/js/modules/exporting.js"></script>
+    {% endblock %}
 {% endblock %}
 
 

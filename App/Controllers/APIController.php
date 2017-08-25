@@ -30,7 +30,7 @@ class APIController extends Controller
         $dataSensorDTO->setValeur($request->getParam('valeur'));
         $data = $dataSensordao->putData($this->bd, $dataSensorDTO);
         return json_encode($data);
-    }
+    } 
 
     public function addDataFromSensor(Request $request,Response $response, $arg){
         $capteur = $arg['capteur'];
@@ -39,7 +39,7 @@ class APIController extends Controller
         $dataSensorDTO->setCapteur($capteur);
         $dataSensorDTO->setValeur($request->getParam('valeur'));
         $data = $dataSensordao->putData($this->bd, $dataSensorDTO);
-
+        
         return $response->withJson($data, 200);
     }
 
